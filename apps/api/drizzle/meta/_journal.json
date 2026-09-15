@@ -8,6 +8,13 @@
       "when": 1789499140484,
       "tag": "0000_init",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1789504500074,
+      "tag": "0001_fix_seed_encoding",
+      "breakpoints": true
     }
   ]
 }

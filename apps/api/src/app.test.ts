@@ -36,6 +36,9 @@ describe('público', () => {
       'scraper-b2b',
       'pagina-web',
     ]);
+    // Protege contra texto mal codificado ("adopciÃ³n").
+    expect(res.body[0].titleEs).toBe('Sistema de adopción');
+    expect(JSON.stringify(res.body)).not.toMatch(/Ã|Â/);
   });
 
   it('devuelve 404 para un slug que no existe', async () => {

@@ -6,6 +6,7 @@ export const site = {
   /** Foto en apps/web/public/img/. null muestra las iniciales. */
   photo: null as string | null,
   github: 'https://github.com/bossjona19',
+  email: 'quinterojonathan108@gmail.com',
   linkedin: null as string | null,
   upwork: null as string | null,
   /** IDs de YouTube (lo que va después de watch?v=). null muestra "en preparación". */

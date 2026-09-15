@@ -34,7 +34,10 @@
     "close": "Close",
     "loading": "Loading projects…",
     "error": "Projects couldn't be loaded. Try reloading the page.",
-    "empty": "Projects coming soon."
+    "empty": "Projects coming soon.",
+    "ctaTitle": "Need something similar?",
+    "ctaText": "Tell me your idea and I'll walk you through how I'd build it.",
+    "ctaButton": "Let's talk"
   },
   "video": {
     "title": "Project walkthrough",
@@ -55,6 +58,7 @@
     "tooMany": "You've sent several messages in a row. Please wait a bit and try again."
   },
   "footer": {
-    "rights": "Built with React, Node.js and Express."
+    "rights": "Built with React, Node.js and Express.",
+    "top": "Back to top"
   }
 }

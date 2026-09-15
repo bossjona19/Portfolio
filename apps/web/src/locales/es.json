@@ -34,7 +34,10 @@
     "close": "Cerrar",
     "loading": "Cargando proyectos…",
     "error": "No se pudieron cargar los proyectos. Intenta recargar la página.",
-    "empty": "Pronto habrá proyectos aquí."
+    "empty": "Pronto habrá proyectos aquí.",
+    "ctaTitle": "¿Necesitas algo parecido?",
+    "ctaText": "Cuéntame tu idea y te digo cómo la construiría.",
+    "ctaButton": "Hablemos"
   },
   "video": {
     "title": "Recorrido por mis proyectos",
@@ -55,6 +58,7 @@
     "tooMany": "Enviaste varios mensajes seguidos. Espera un rato e inténtalo de nuevo."
   },
   "footer": {
-    "rights": "Hecho con React, Node.js y Express."
+    "rights": "Hecho con React, Node.js y Express.",
+    "top": "Volver arriba"
   }
 }

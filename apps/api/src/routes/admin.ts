@@ -9,6 +9,14 @@ import { validateBody } from '../middleware/validate.js';
 import { translate } from '../services/translate.js';
 
 const optionalUrl = z.string().trim().url().nullable().optional().or(z.literal('').transform(() => null));
+/** URL absoluta o ruta del propio sitio (/img/...). */
+const optionalImage = z
+  .string()
+  .trim()
+  .refine((v) => /^\/[^/]/.test(v) || URL.canParse(v), 'URL o ruta que empiece con /')
+  .nullable()
+  .optional()
+  .or(z.literal('').transform(() => null));
 
 export const projectInput = z.object({
   slug: z.string().trim().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'slug: minúsculas, números y guiones'),
@@ -21,7 +29,7 @@ export const projectInput = z.object({
   summaryEn: z.string().trim().max(400).default(''),
   detailsEs: z.string().trim().max(5000).default(''),
   detailsEn: z.string().trim().max(5000).default(''),
-  imageUrl: optionalUrl,
+  imageUrl: optionalImage,
   videoId: z.string().trim().max(20).nullable().optional(),
   repoUrl: optionalUrl,
   liveUrl: optionalUrl,

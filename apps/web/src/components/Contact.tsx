@@ -1,4 +1,4 @@
-import { CheckCircle2, Send } from 'lucide-react';
+import { CheckCircle2, Mail, Send } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { api, ApiError } from '../lib/api';
@@ -36,14 +36,44 @@ export function Contact() {
           <p className="mb-3 font-display text-sm font-semibold text-accent">04</p>
           <h2 className="font-display text-3xl font-bold tracking-tight text-balance sm:text-5xl">{t('contact.title')}</h2>
           <p className="mt-5 max-w-md text-lg text-muted text-pretty">{t('contact.subtitle')}</p>
-          <a
-            href={site.github}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-8 inline-flex items-center gap-2 text-muted transition hover:text-fg"
-          >
-            <GithubIcon size={18} /> {site.github.replace('https://', '')}
-          </a>
+          <ul className="mt-8 space-y-3">
+            <li>
+              <a href={`mailto:${site.email}`} className="inline-flex items-center gap-3 text-fg transition hover:text-accent">
+                <span className="grid size-10 place-items-center rounded-full border border-line bg-panel">
+                  <Mail size={18} />
+                </span>
+                {site.email}
+              </a>
+            </li>
+            <li>
+              <a
+                href={site.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 text-fg transition hover:text-accent"
+              >
+                <span className="grid size-10 place-items-center rounded-full border border-line bg-panel">
+                  <GithubIcon size={18} />
+                </span>
+                {site.github.replace('https://', '')}
+              </a>
+            </li>
+            {site.linkedin && (
+              <li>
+                <a
+                  href={site.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-3 text-fg transition hover:text-accent"
+                >
+                  <span className="grid size-10 place-items-center rounded-full border border-line bg-panel text-sm font-bold">
+                    in
+                  </span>
+                  LinkedIn
+                </a>
+              </li>
+            )}
+          </ul>
         </Reveal>
 
         <Reveal delay={0.1}>

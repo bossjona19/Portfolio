@@ -37,7 +37,7 @@ describe('público', () => {
       'pagina-web',
     ]);
     // Protege contra texto mal codificado ("adopciÃ³n").
-    expect(res.body[0].titleEs).toBe('Sistema de adopción');
+    expect(res.body[0].titleEs).toBe('Sistema de gestión de adopciones');
     expect(JSON.stringify(res.body)).not.toMatch(/Ã|Â/);
   });
 

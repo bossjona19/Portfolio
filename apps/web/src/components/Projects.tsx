@@ -55,6 +55,21 @@ export function Projects() {
             ))}
           </ul>
         )}
+
+        <Reveal className="mt-12">
+          <div className="flex flex-col items-start justify-between gap-5 rounded-2xl border border-line bg-gradient-to-r from-accent/10 via-panel to-panel p-6 sm:flex-row sm:items-center sm:p-8">
+            <div>
+              <p className="font-display text-xl font-semibold">{t('projects.ctaTitle')}</p>
+              <p className="mt-1 text-muted">{t('projects.ctaText')}</p>
+            </div>
+            <a
+              href="#contact"
+              className="inline-flex shrink-0 items-center gap-2 rounded-full bg-accent px-6 py-3 font-semibold text-ink transition hover:brightness-110"
+            >
+              {t('projects.ctaButton')} <ArrowUpRight size={18} />
+            </a>
+          </div>
+        </Reveal>
       </div>
 
       <AnimatePresence>{open && <ProjectDialog project={open} onClose={() => setOpen(null)} />}</AnimatePresence>

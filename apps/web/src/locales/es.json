@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "Jonathan Quintero — Desarrollador Full-stack",
+    "description": "Desarrollador full-stack (React + Node.js). Proyectos, videos y contacto."
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "video": "Recorrido",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "hero": {
+    "eyebrow": "Disponible para proyectos freelance",
+    "title": "Construyo aplicaciones web completas, del diseño a la base de datos.",
+    "subtitle": "Desarrollador full-stack con React y Node.js. Hago sistemas que resuelven problemas reales: automatización, plataformas de gestión y sitios rápidos.",
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Hablemos",
+    "videoLabel": "Video de presentación · 1 min"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "body1": "Soy Jonathan, desarrollador full-stack. Me gusta tomar una idea, entender el problema de fondo y convertirla en un producto que la gente use.",
+    "body2": "Trabajo con React en el frontend y Node.js con Express en el backend, con bases de datos PostgreSQL y APIs de terceros. Cuido que el código sea claro, probado y fácil de mantener.",
+    "skillsTitle": "Tecnologías"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Una muestra de lo que he construido. Cada uno resuelve un problema distinto.",
+    "featured": "Destacado",
+    "code": "Código",
+    "live": "Ver en vivo",
+    "more": "Ver más",
+    "close": "Cerrar",
+    "loading": "Cargando proyectos…",
+    "error": "No se pudieron cargar los proyectos. Intenta recargar la página.",
+    "empty": "Pronto habrá proyectos aquí."
+  },
+  "video": {
+    "title": "Recorrido por mis proyectos",
+    "subtitle": "Te muestro cómo funcionan por dentro y qué decisiones tomé en cada uno.",
+    "play": "Reproducir video",
+    "soon": "Video en preparación"
+  },
+  "contact": {
+    "title": "¿Tienes un proyecto en mente?",
+    "subtitle": "Cuéntame qué necesitas y te respondo en menos de 24 horas.",
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "sending": "Enviando…",
+    "success": "¡Mensaje enviado! Te respondo pronto.",
+    "error": "No se pudo enviar. Revisa los datos o inténtalo más tarde.",
+    "tooMany": "Enviaste varios mensajes seguidos. Espera un rato e inténtalo de nuevo."
+  },
+  "footer": {
+    "rights": "Hecho con React, Node.js y Express."
+  }
+}

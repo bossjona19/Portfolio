@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #0a0b0f;
+  --color-panel: #12141b;
+  --color-panel-2: #181b24;
+  --color-line: #262a36;
+  --color-muted: #9197a8;
+  --color-fg: #eef0f5;
+  --color-accent: #c8f65d;
+  --color-accent-2: #7cc4ff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-ink text-fg font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-accent text-ink;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+
+/* Controles del panel admin. */
+@utility input {
+  @apply w-full rounded-xl border border-line bg-ink px-3.5 py-2.5 text-fg placeholder:text-muted/50 focus:border-accent focus:outline-none;
+}
+@utility btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:brightness-110 disabled:opacity-60;
+}
+@utility btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-line px-4 py-2 text-sm font-semibold text-fg transition hover:border-fg/40 disabled:opacity-50;
+}
+@utility btn-icon {
+  @apply grid size-9 place-items-center rounded-full text-muted transition hover:bg-fg/5 hover:text-fg;
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

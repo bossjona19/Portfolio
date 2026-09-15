@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "Jonathan Quintero — Full-stack Developer",
+    "description": "Full-stack developer (React + Node.js). Projects, videos and contact."
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "video": "Walkthrough",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "eyebrow": "Available for freelance projects",
+    "title": "I build complete web applications, from interface to database.",
+    "subtitle": "Full-stack developer working with React and Node.js. I build systems that solve real problems: automation, management platforms and fast websites.",
+    "ctaProjects": "See projects",
+    "ctaContact": "Let's talk",
+    "videoLabel": "Intro video · 1 min"
+  },
+  "about": {
+    "title": "About me",
+    "body1": "I'm Jonathan, a full-stack developer. I like taking an idea, understanding the real problem behind it and turning it into a product people actually use.",
+    "body2": "I work with React on the frontend and Node.js with Express on the backend, using PostgreSQL databases and third-party APIs. I keep code clear, tested and easy to maintain.",
+    "skillsTitle": "Tech stack"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of what I've built. Each one solves a different problem.",
+    "featured": "Featured",
+    "code": "Code",
+    "live": "Live demo",
+    "more": "Learn more",
+    "close": "Close",
+    "loading": "Loading projects…",
+    "error": "Projects couldn't be loaded. Try reloading the page.",
+    "empty": "Projects coming soon."
+  },
+  "video": {
+    "title": "Project walkthrough",
+    "subtitle": "A look at how they work under the hood and the decisions behind each one.",
+    "play": "Play video",
+    "soon": "Video coming soon"
+  },
+  "contact": {
+    "title": "Have a project in mind?",
+    "subtitle": "Tell me what you need and I'll get back to you within 24 hours.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Message sent! I'll get back to you soon.",
+    "error": "Couldn't send it. Check your details or try again later.",
+    "tooMany": "You've sent several messages in a row. Please wait a bit and try again."
+  },
+  "footer": {
+    "rights": "Built with React, Node.js and Express."
+  }
+}

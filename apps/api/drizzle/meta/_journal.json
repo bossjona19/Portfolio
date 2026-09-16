@@ -15,6 +15,13 @@
       "when": 1789504500074,
       "tag": "0001_fix_seed_encoding",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1789574347422,
+      "tag": "0002_project_diagram",
+      "breakpoints": true
     }
   ]
 }

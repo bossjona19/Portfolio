@@ -4,9 +4,10 @@ import type { Project } from '../../lib/api';
 
 type Call = <T>(path: string, init?: RequestInit) => Promise<T>;
 
-type Draft = Omit<Project, 'id' | 'tech' | 'imageUrl' | 'videoId' | 'repoUrl' | 'liveUrl'> & {
+type Draft = Omit<Project, 'id' | 'tech' | 'imageUrl' | 'diagramUrl' | 'videoId' | 'repoUrl' | 'liveUrl'> & {
   tech: string;
   imageUrl: string;
+  diagramUrl: string;
   videoId: string;
   repoUrl: string;
   liveUrl: string;
@@ -25,6 +26,7 @@ const toDraft = (p: Project | null, position: number): Draft => ({
   detailsEn: p?.detailsEn ?? '',
   tech: p?.tech.join(', ') ?? '',
   imageUrl: p?.imageUrl ?? '',
+  diagramUrl: p?.diagramUrl ?? '',
   videoId: p?.videoId ?? '',
   repoUrl: p?.repoUrl ?? '',
   liveUrl: p?.liveUrl ?? '',
@@ -150,6 +152,7 @@ export function ProjectForm({
           <input className="input" type="number" min={0} value={d.position} onChange={(e) => set('position', Number(e.target.value))} />
         </Field>
         {text('imageUrl', 'URL de imagen', { placeholder: 'https://…' })}
+        {text('diagramUrl', 'Imagen explicativa', { placeholder: '/img/projects/…' })}
         {text('videoId', 'ID de video de YouTube')}
         {text('repoUrl', 'Repositorio', { placeholder: 'https://github.com/…' })}
         {text('liveUrl', 'Sitio en vivo', { placeholder: 'https://…' })}

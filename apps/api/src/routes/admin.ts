@@ -30,6 +30,7 @@ export const projectInput = z.object({
   detailsEs: z.string().trim().max(5000).default(''),
   detailsEn: z.string().trim().max(5000).default(''),
   imageUrl: optionalImage,
+  diagramUrl: optionalImage,
   videoId: z.string().trim().max(20).nullable().optional(),
   repoUrl: optionalUrl,
   liveUrl: optionalUrl,

@@ -13,6 +13,7 @@ export interface Project {
   detailsEs: string;
   detailsEn: string;
   imageUrl: string | null;
+  diagramUrl: string | null;
   videoId: string | null;
   repoUrl: string | null;
   liveUrl: string | null;

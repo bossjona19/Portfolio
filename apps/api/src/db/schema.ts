@@ -15,6 +15,8 @@ export const projects = pgTable('projects', {
   detailsEn: text('details_en').notNull().default(''),
 
   imageUrl: text('image_url'),
+  /** Imagen explicativa (cómo funciona) que se muestra en el detalle del proyecto. */
+  diagramUrl: text('diagram_url'),
   videoId: text('video_id'),
   repoUrl: text('repo_url'),
   liveUrl: text('live_url'),

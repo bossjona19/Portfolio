@@ -221,6 +221,14 @@ function ProjectDialog({ project, onClose }: { project: Project; onClose: () => 
             <Cover project={project} index={Math.max(project.position - 1, 0)} className="aspect-video w-full rounded-2xl" />
           )}
           <p className="text-lg leading-relaxed text-pretty">{summary}</p>
+          {project.diagramUrl && (
+            <figure className="space-y-3">
+              <figcaption className="font-display text-sm font-semibold uppercase tracking-wider text-accent">{t('projects.howItWorks')}</figcaption>
+              <a href={project.diagramUrl} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-2xl border border-line">
+                <img src={project.diagramUrl} alt={`${t('projects.howItWorks')}: ${title}`} loading="lazy" className="w-full" />
+              </a>
+            </figure>
+          )}
           {details && <p className="whitespace-pre-line leading-relaxed text-muted text-pretty">{details}</p>}
           <TechList tech={project.tech} />
           {(project.repoUrl || project.liveUrl) && (

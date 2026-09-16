@@ -30,6 +30,7 @@ export const seedProjects: NewProject[] = [
 • Dashboard with KPIs, institutional PDF reports and CSV, PDF and Excel export.
 • Installable PWA, CI on GitHub Actions and a Content Security Policy.`,
     imageUrl: '/img/projects/sistema-adopcion.webp',
+    diagramUrl: '/img/projects/sistema-adopcion-diagrama.webp',
     repoUrl: 'https://github.com/bossjona19/Sistema-de-adopcion',
     liveUrl: 'https://sistema-de-adopcion-ochre.vercel.app',
     tech: ['JavaScript', 'Supabase', 'PostgreSQL', 'Row Level Security', 'PWA', 'Chart.js', 'Vercel'],
@@ -59,6 +60,7 @@ export const seedProjects: NewProject[] = [
 • Honors per-domain opt-out and only marks verified emails as sendable.
 • 179 automated checks that verify against the real database that constraints actually hold.`,
     imageUrl: '/img/projects/scraper-b2b.webp',
+    diagramUrl: '/img/projects/scraper-b2b-diagrama.webp',
     repoUrl: 'https://github.com/TrabajoJonathan/Scraper-B2B',
     liveUrl: null,
     tech: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'Supabase', 'Claude API', 'Google Places API'],
@@ -88,6 +90,7 @@ export const seedProjects: NewProject[] = [
 • Firestore rules: the public can only create bookings; reading or editing them requires a session.
 • Google Calendar integration and a responsive, mobile-first design.`,
     imageUrl: '/img/projects/salon-belleza.webp',
+    diagramUrl: '/img/projects/salon-belleza-diagrama.webp',
     repoUrl: 'https://github.com/bossjona19/Pagina-web-de-salon-de-belleza',
     liveUrl: 'https://pagina-web-de-salon-de-belleza.vercel.app',
     tech: ['JavaScript', 'HTML', 'CSS', 'Firebase', 'Firestore', 'Google Calendar API', 'Vercel'],

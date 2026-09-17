@@ -43,9 +43,14 @@
   },
   "video": {
     "title": "Project walkthrough",
-    "subtitle": "A look at how they work under the hood and the decisions behind each one.",
+    "subtitle": "A quick walkthrough of each project (no audio).",
     "play": "Play video",
-    "soon": "Video coming soon"
+    "soon": "Video coming soon",
+    "items": {
+      "sistema-adopcion": "Adoption management system",
+      "salon-belleza": "Beauty salon bookings",
+      "scraper-b2b": "B2B lead finder"
+    }
   },
   "contact": {
     "title": "Have a project in mind?",

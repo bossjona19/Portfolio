@@ -43,9 +43,14 @@
   },
   "video": {
     "title": "Recorrido por mis proyectos",
-    "subtitle": "Te muestro cómo funcionan por dentro y qué decisiones tomé en cada uno.",
+    "subtitle": "Un recorrido rápido por cada proyecto, sin audio.",
     "play": "Reproducir video",
-    "soon": "Video en preparación"
+    "soon": "Video en preparación",
+    "items": {
+      "sistema-adopcion": "Sistema de gestión de adopciones",
+      "salon-belleza": "Reservas para salón de belleza",
+      "scraper-b2b": "Buscador de clientes B2B"
+    }
   },
   "contact": {
     "title": "¿Tienes un proyecto en mente?",

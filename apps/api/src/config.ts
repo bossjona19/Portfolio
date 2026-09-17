@@ -22,6 +22,21 @@ const schema = z.object({
 
 export type Config = z.infer<typeof schema>;
 
-export const config: Config = schema.parse(process.env);
+// Los valores pegados en Vercel a veces traen espacios, saltos de línea o comillas alrededor.
+const clean = (v: string | undefined) => v?.trim().replace(/^(["'])(.*)\1$/, '$2').trim();
+const env = Object.fromEntries(Object.entries(process.env).map(([k, v]) => [k, clean(v)]));
+
+const parsed = schema.safeParse(env);
+if (!parsed.success) {
+  // Para diagnosticar sin exponer secretos: solo el largo y los caracteres raros de cada campo inválido.
+  for (const issue of parsed.error.issues) {
+    const key = String(issue.path[0]);
+    const raw = process.env[key] ?? '';
+    const odd = [...raw].filter((c) => !/[\w@.+-]/.test(c)).map((c) => `U+${c.codePointAt(0)!.toString(16).padStart(4, '0')}`);
+    console.error(`Variable inválida ${key}: ${issue.message} (largo ${raw.length}, caracteres raros: ${odd.join(' ') || 'ninguno'})`);
+  }
+  throw new Error('Configuración inválida');
+}
+export const config: Config = parsed.data;
 
 export const allowedOrigins = config.WEB_ORIGIN.split(',').map((o) => o.trim()).filter(Boolean);

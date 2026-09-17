@@ -4,11 +4,11 @@ export const site = {
   role: 'Full-stack Developer',
   initials: 'JQ',
   /** Foto en apps/web/public/img/. null muestra las iniciales. */
-  photo: null as string | null,
+  photo: '/img/jonathan.webp' as string | null,
   github: 'https://github.com/bossjona19',
   email: 'quinterojonathan108@gmail.com',
-  linkedin: null as string | null,
-  upwork: null as string | null,
+  linkedin: 'https://www.linkedin.com/in/jonathan-quintero-8aa96026b' as string | null,
+  upwork: 'https://www.upwork.com/freelancers/~01cb5ac7aee84b011e' as string | null,
   /** IDs de YouTube (lo que va después de watch?v=). null muestra "en preparación". */
   videos: {
     intro: '00mCCqaAx4M' as string | null,

@@ -73,6 +73,21 @@ export function Contact() {
                 </a>
               </li>
             )}
+            {site.upwork && (
+              <li>
+                <a
+                  href={site.upwork}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-3 text-fg transition hover:text-accent"
+                >
+                  <span className="grid size-10 place-items-center rounded-full border border-line bg-panel text-sm font-bold">
+                    up
+                  </span>
+                  Upwork
+                </a>
+              </li>
+            )}
           </ul>
         </Reveal>
 

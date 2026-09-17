@@ -83,11 +83,13 @@ const GRADIENTS = [
   'from-fuchsia-400/25 via-panel-2 to-panel',
 ];
 
+/** Portada: la imagen explicativa si existe; si no, la captura; si no, un fondo con el número. */
 function Cover({ project, index, className = '' }: { project: Project; index: number; className?: string }) {
   const { i18n } = useTranslation();
   const { title } = localized(project, i18n.language);
-  if (project.imageUrl) {
-    return <img src={project.imageUrl} alt={title} loading="lazy" className={`object-cover ${className}`} />;
+  const src = project.diagramUrl ?? project.imageUrl;
+  if (src) {
+    return <img src={src} alt={title} loading="lazy" className={`object-cover ${className}`} />;
   }
   return (
     <div className={`relative grid place-items-center bg-gradient-to-br ${GRADIENTS[index % GRADIENTS.length]} ${className}`}>
@@ -104,15 +106,19 @@ function ProjectCard({ project, index, onOpen }: { project: Project; index: numb
   return (
     <article className="group flex w-full flex-col overflow-hidden rounded-2xl border border-line bg-panel transition duration-300 hover:-translate-y-1 hover:border-accent/40">
       <div className="relative overflow-hidden">
-        <Cover project={project} index={index} className="aspect-[16/10] w-full transition duration-500 group-hover:scale-105" />
-        {project.featured && (
-          <span className="absolute left-3 top-3 rounded-full bg-ink/80 px-2.5 py-1 text-xs font-semibold text-accent backdrop-blur">
-            {t('projects.featured')}
-          </span>
-        )}
+        <Cover
+          project={project}
+          index={index}
+          className={`${project.diagramUrl ? 'aspect-square' : 'aspect-[16/10]'} w-full transition duration-500 group-hover:scale-[1.03]`}
+        />
       </div>
 
       <div className="flex flex-1 flex-col p-6">
+        {project.featured && (
+          <span className="mb-3 self-start rounded-full bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent">
+            {t('projects.featured')}
+          </span>
+        )}
         <h3 className="font-display text-xl font-semibold">{title}</h3>
         <p className="mt-3 line-clamp-4 flex-1 leading-relaxed text-muted">{summary}</p>
         <TechList tech={project.tech} />
@@ -217,17 +223,17 @@ function ProjectDialog({ project, onClose }: { project: Project; onClose: () => 
         <div className="space-y-6 p-6">
           {project.videoId ? (
             <YouTube id={project.videoId} title={title} />
+          ) : project.diagramUrl ? (
+            <FigureLink src={project.diagramUrl} alt={`${t('projects.howItWorks')}: ${title}`} />
           ) : (
             <Cover project={project} index={Math.max(project.position - 1, 0)} className="aspect-video w-full rounded-2xl" />
           )}
           <p className="text-lg leading-relaxed text-pretty">{summary}</p>
-          {project.diagramUrl && (
-            <figure className="space-y-3">
-              <figcaption className="font-display text-sm font-semibold uppercase tracking-wider text-accent">{t('projects.howItWorks')}</figcaption>
-              <a href={project.diagramUrl} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-2xl border border-line">
-                <img src={project.diagramUrl} alt={`${t('projects.howItWorks')}: ${title}`} loading="lazy" className="w-full" />
-              </a>
-            </figure>
+          {project.videoId && project.diagramUrl && (
+            <FigureLink src={project.diagramUrl} alt={`${t('projects.howItWorks')}: ${title}`} caption={t('projects.howItWorks')} />
+          )}
+          {project.diagramUrl && project.imageUrl && (
+            <FigureLink src={project.imageUrl} alt={`${t('projects.screenshot')}: ${title}`} caption={t('projects.screenshot')} />
           )}
           {details && <p className="whitespace-pre-line leading-relaxed text-muted text-pretty">{details}</p>}
           <TechList tech={project.tech} />
@@ -239,5 +245,16 @@ function ProjectDialog({ project, onClose }: { project: Project; onClose: () => 
         </div>
       </motion.div>
     </motion.div>
+  );
+}
+
+function FigureLink({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  return (
+    <figure className="space-y-3">
+      {caption && <figcaption className="font-display text-sm font-semibold uppercase tracking-wider text-accent">{caption}</figcaption>}
+      <a href={src} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-2xl border border-line">
+        <img src={src} alt={alt} loading="lazy" className="w-full" />
+      </a>
+    </figure>
   );
 }

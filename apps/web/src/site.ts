@@ -11,7 +11,7 @@ export const site = {
   upwork: null as string | null,
   /** IDs de YouTube (lo que va después de watch?v=). null muestra "en preparación". */
   videos: {
-    intro: null as string | null,
+    intro: '00mCCqaAx4M' as string | null,
     projects: null as string | null,
   },
   skills: [

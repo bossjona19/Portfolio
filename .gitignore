@@ -10,3 +10,6 @@ dist/
 .vercel
 .env*
 !.env.example
+
+# Material de ventas y contenido: privado, no va a GitHub (el repo es publico).
+marketing/

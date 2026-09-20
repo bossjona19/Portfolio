@@ -13,7 +13,7 @@ export const seedProjects: NewProject[] = [
       'Plataforma para una ONG que gestiona niños, familias solicitantes y expedientes de adopción de principio a fin, con roles, auditoría y reportes PDF.',
     summaryEn:
       'Platform for an NGO to manage children, applicant families and adoption case files end to end, with roles, audit logs and PDF reports.',
-    detailsEs: `Empezó como un CRUD universitario (UTP) y lo llevé a prácticas de software profesional.
+    detailsEs: `Lo construí de principio a fin con prácticas de software profesional.
 
 • Roles y permisos (admin, coordinador, trabajador social, director) aplicados en la base de datos con Row Level Security, no solo en la interfaz.
 • Cada trabajador social ve únicamente sus casos, sus notas y sus documentos.
@@ -21,7 +21,7 @@ export const seedProjects: NewProject[] = [
 • Bitácora de auditoría con el antes y el después de cada cambio.
 • Dashboard con indicadores, reportes PDF institucionales y exportación a CSV, PDF y Excel.
 • PWA instalable, CI en GitHub Actions y política de seguridad de contenido (CSP).`,
-    detailsEn: `It started as a university CRUD project (UTP) and I took it to professional software practices.
+    detailsEn: `I built it end to end with professional software practices.
 
 • Roles and permissions (admin, coordinator, social worker, director) enforced in the database with Row Level Security, not just in the UI.
 • Each social worker only sees their own cases, notes and documents.
